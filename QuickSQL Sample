@@ -1,0 +1,40 @@
+products /insert 10 /api /rest-- contains all our products 
+   name vc50 -- product name in English
+   description
+   sku vc30 -- our code
+   unit num
+   unit price num -- price in USD
+
+customers /insert 20 /api /rest
+   first name
+   last name
+   email
+   city
+   country vc50
+   gender  vc30 /check Male, Female
+   date of birth
+   phone vc30
+   postal code vc30
+
+channels /insert 3 /api /rest
+   name /check direct, online, phone
+
+promotions /insert 4 /api /rest
+   name
+   code vc10
+   date begin
+   date end
+   discount percentage  num
+
+sales /insert 40 
+   product id
+   customer id
+   promotion id
+   channel id
+   date of sale
+   quantity num
+   unit price num
+
+view sales_v products customers channels promotions sales
+
+# settings = { PK: "IDENTITY", date: "TIMESTAMP WITH LOCAL TIME ZONE", semantics: "CHAR", auditCols: true, drop: true, language: "EN", APEX: true }
